@@ -2,7 +2,8 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import { Button } from "@mui/material";
+import Intro from "../components/Intro";
+import About from "../components/About";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -11,22 +12,12 @@ function App() {
       "https://www.kaushikthallapally.me/uploads/9/9/3/0/99300024/kaushik_thallapally_resume.pdf",
       "_blank"
     );
-    // window.location.href =
-    //   "https://www.kaushikthallapally.me/uploads/9/9/3/0/99300024/kaushik_thallapally_resume.pdf";
   }
   return (
-    <>
-      <div className="intro-title">Hello, I’m Kaushik,</div>
-      <div className="profession">Software Engineer</div>
-      <div className="intro-title">
-        based in India/United States of America.
-      </div>
-      <div className="buttonWrapper">
-        <button className="resume-button" onClick={openResume}>
-          Resume
-        </button>
-      </div>
-    </>
+    <div className="body-div">
+      <Intro />
+      <About />
+    </div>
   );
 }
 
