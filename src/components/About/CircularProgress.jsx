@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
+// eslint-disable-next-line react/prop-types
 const CircularProgress = ({ size, strokeWidth, percentage, color, title }) => {
   const [progress, setProgress] = useState(0);
   useEffect(() => {
@@ -12,7 +13,7 @@ const CircularProgress = ({ size, strokeWidth, percentage, color, title }) => {
   const dash = (progress * circumference) / 100;
 
   return (
-    <>
+    <div>
       <div className="skill-title">{title}</div>
       <svg width={size} height={size} viewBox={viewBox}>
         <circle
@@ -46,7 +47,7 @@ const CircularProgress = ({ size, strokeWidth, percentage, color, title }) => {
           {`${percentage}%`}
         </text>
       </svg>
-    </>
+    </div>
   );
 };
 

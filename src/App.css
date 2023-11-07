@@ -41,6 +41,12 @@
   background-color: #f5ee84;
   color: #03045e;
 }
+.resume-button:hover {
+  background-color: #b1ac5f;
+  border: 1px solid #f5ee84;
+  color: white;
+}
+
 .about-title {
   color: #474306;
   font-size: 50px;
@@ -49,6 +55,16 @@
   line-height: 116px;
   word-wrap: break-word;
 }
+
+.ping-title {
+  color: #03045e;
+  font-size: 28px;
+  font-family: Poppins;
+  font-weight: 600;
+  /* line-height: 116px; */
+  word-wrap: break-word;
+}
+
 .about-body {
   color: #03045e;
   font-size: 24px;
@@ -70,7 +86,41 @@
 .skills {
   display: flex;
 }
+.contact-body {
+  display: flex;
+  justify-content: space-between;
+}
 
+.contact-social {
+  margin-left: 50px;
+}
+#contact-form input {
+  width: 500px;
+}
+#contact-form {
+  margin-top: -15px;
+}
+/* #stylized input {
+  display: block;
+  font-size: 11px;
+  padding: 4px 2px;
+  border: solid 1px #aacfe4;
+  width: 100px;
+  margin: 2px 0 20px 10px;
+  border-radius: 10px;
+}
+#contact
+#stylized textarea {
+  display: block;
+  font-size: 11px;
+  padding: 4px 2px;
+  border: solid 1px #aacfe4;
+  width: 100px;
+  margin: 2px 0 20px 10px;
+} */
+.text-field {
+  padding: 10;
+}
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);

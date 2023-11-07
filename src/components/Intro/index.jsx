@@ -1,5 +1,3 @@
-import React from "react";
-
 function Intro() {
   function openResume() {
     window.open(
