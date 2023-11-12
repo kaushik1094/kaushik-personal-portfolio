@@ -7,7 +7,7 @@ export default function Social() {
       </h4>
       <ul className="social-icons">
         <li>
-          <a href="" className="social-icon">
+          <a href="mailto:thallapallyk@gmail.com" className="social-icon">
             {" "}
             <i className="fa fa-envelope"></i>
           </a>
