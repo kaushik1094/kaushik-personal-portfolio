@@ -1,7 +1,7 @@
 function Intro() {
   function openResume() {
     window.open(
-      "https://www.kaushikthallapally.me/uploads/9/9/3/0/99300024/kaushik_thallapally_resume.pdf",
+      "https://drive.google.com/file/d/1uJCuqK-v-oILHrcJRiqhxzTYOpajns_k/view?usp=sharing",
       "_blank"
     );
     // window.location.href =
