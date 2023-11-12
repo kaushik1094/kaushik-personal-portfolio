@@ -13,7 +13,10 @@ export default function Social() {
           </a>
         </li>
         <li>
-          <a href="https://twitter.com/iamkaushik" className="social-icon">
+          <a
+            href="https://www.facebook.com/kaushikthallapally"
+            className="social-icon"
+          >
             {" "}
             <i className="fa fa-facebook"></i>
           </a>
@@ -37,7 +40,10 @@ export default function Social() {
           </a>
         </li> */}
         <li>
-          <a href="" className="social-icon">
+          <a
+            href="https://www.linkedin.com/in/kaushik-thallapally/"
+            className="social-icon"
+          >
             {" "}
             <i className="fa fa-linkedin"></i>
           </a>
