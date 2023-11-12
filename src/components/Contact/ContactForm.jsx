@@ -20,6 +20,7 @@ export default function ContactForm() {
     setName("");
     setEmail("");
     setMessage("");
+    setSentSuccess(false);
   }
   useEffect(() => {
     if (sentSuccess) {
@@ -47,7 +48,6 @@ export default function ContactForm() {
         )
         .then(
           function (response) {
-            console.log("SUCCESS!", response.status, response.text);
             if (response.status === 200) {
               setSentSuccess(true);
             } else {
