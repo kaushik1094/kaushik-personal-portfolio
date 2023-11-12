@@ -42,6 +42,18 @@ ul.social-icons {
   transition: 0.5s;
   background-color: #03045e;
 }
+.fa-github:hover {
+  background-color: #161b22;
+}
+.fa-github {
+  padding: 10px 12px;
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: #03045e;
+}
 .fa-twitter:hover {
   background-color: #00aced;
 }

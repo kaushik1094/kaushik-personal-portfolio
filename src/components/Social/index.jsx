@@ -22,12 +22,12 @@ export default function Social() {
             <i className="fa fa-twitter"></i>
           </a>
         </li>
-        {/* <li>
-          <a href="" className="social-icon">
+        <li>
+          <a href="https://github.com/kaushik1094" className="social-icon">
             {" "}
-            <i className="fa fa-rss"></i>
+            <i className="fa fa-github"></i>
           </a>
-        </li> */}
+        </li>
         {/* <li>
           <a href="" className="social-icon">
             {" "}
