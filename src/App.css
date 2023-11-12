@@ -1,3 +1,5 @@
+/* @import "/node_modules/@fortawesome/fontawesome-free/css/all.min.css"; */
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -75,12 +77,50 @@
 }
 .skill-title {
   color: #03045e;
-  font-size: 20px;
+  font-size: 24px;
   font-family: Poppins;
   font-weight: 800;
   line-height: 116px;
-  word-wrap: break-word;
+  white-space: nowrap;
   padding: 0 90px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+}
+a:hover {
+  cursor: pointer;
+}
+.header-links a {
+  color: var(--Dark-Blue, #03045e);
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.header-background {
+  background-color: #f9f4a7;
+  box-shadow: 0 -6px 10px 5px rgba(5, 5, 5, 0.5);
+}
+.header-title {
+  color: var(--Dark-Blue, #03045e);
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.header-links {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 0.1;
 }
 
 .skills {

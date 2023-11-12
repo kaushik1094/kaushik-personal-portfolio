@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { FormControl, TextField } from "@mui/material";
 const style = {
@@ -12,26 +12,55 @@ const style = {
   },
 };
 export default function ContactForm() {
-  const form = useRef();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [sentSuccess, setSentSuccess] = useState(false);
+  function resetStates() {
+    setName("");
+    setEmail("");
+    setMessage("");
+  }
+  useEffect(() => {
+    if (sentSuccess) {
+      alert("Message sent successfully!");
+      resetStates();
+    }
+  }, [sentSuccess]);
+
   // eslint-disable-next-line no-unused-vars
   const sendEmail = (e) => {
     e.preventDefault();
+    if (name !== "" && email !== "" && message !== "") {
+      const templateParams = {
+        name: name,
+        email,
+        notes: message,
+      };
 
-    emailjs
-      .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        form.current,
-        "YOUR_PUBLIC_KEY"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+      emailjs
+        .send(
+          "service_5wyqalw",
+          "template_oleg1q5",
+          templateParams,
+          "vENA4BgOh2GpAyLA2"
+        )
+        .then(
+          function (response) {
+            console.log("SUCCESS!", response.status, response.text);
+            if (response.status === 200) {
+              setSentSuccess(true);
+            } else {
+              alert("message is not delivered please try again");
+            }
+          },
+          function (error) {
+            alert(`${error} message is not delivered please try again`);
+          }
+        );
+    } else {
+      alert("Please fill out all required form fields");
+    }
   };
   //   return (
   //     <div id="stylized">
@@ -59,6 +88,8 @@ export default function ContactForm() {
         <TextField
           sx={style}
           required
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           id="outlined-required"
           label="Name"
           // defaultValue="Name"
@@ -68,6 +99,8 @@ export default function ContactForm() {
         <TextField
           sx={style}
           required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           id="outlined-required"
           label="Email"
           type="email"
@@ -79,6 +112,8 @@ export default function ContactForm() {
         <TextField
           sx={style}
           required
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
           id="outlined-required"
           label="Message"
           multiline
