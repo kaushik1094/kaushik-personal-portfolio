@@ -2,7 +2,9 @@ import "./index.css";
 export default function Social() {
   return (
     <div className="footer-social-icons">
-      <h4 className="_14">Follow me on</h4>
+      <h4 className="_14" style={{ color: "#213547" }}>
+        Follow me on
+      </h4>
       <ul className="social-icons">
         <li>
           <a href="" className="social-icon">
