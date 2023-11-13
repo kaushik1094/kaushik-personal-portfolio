@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-scroll";
+import { Link, animateScroll as scroll } from "react-scroll";
 import { useScrollDirection } from "../../hooks/useScrollDirection";
 import { useEffect } from "react";
 
@@ -15,6 +15,14 @@ export default function Header() {
       setHeaderBackground("header");
     }
   }, [scrollDirection]);
+
+  const onClickHome = () => {
+    const options = {
+      duration: 1000,
+      smooth: true,
+    };
+    scroll.scrollToTop(options);
+  };
   return (
     <div className={headerBackground}>
       <Link
@@ -24,6 +32,7 @@ export default function Header() {
         smooth={true}
         duration={1000}
         className="header-title"
+        onClick={onClickHome}
       >
         Kaushik Thallapally
       </Link>
