@@ -1,10 +1,15 @@
 /* @import "/node_modules/@fortawesome/fontawesome-free/css/all.min.css"; */
 
 #root {
-  max-width: 1280px;
+  width: 100%;
+}
+
+.body-div {
+  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 2rem;
   text-align: left;
+  font-size: 12px;
 }
 
 .logo {
@@ -30,7 +35,7 @@
 .profession {
   text-align: left;
   color: #03045e;
-  font-size: 100px;
+  font-size: 5rem;
   font-family: Poppins;
   font-weight: 800;
   line-height: 116px;
@@ -86,12 +91,22 @@
 }
 
 .header {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
   height: 50px;
   padding: 10px;
   position: sticky;
+  top: 0; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  align-items: center;
+  position: sticky;
   top: 0;
+  height: 50px;
+  padding: 1rem 2rem;
 }
 a:hover {
   cursor: pointer;
@@ -102,11 +117,14 @@ a:hover {
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
+  margin-right: 36px;
   line-height: normal;
 }
 .header-background {
   background-color: #f9f4a7;
   box-shadow: 0 -6px 10px 5px rgba(5, 5, 5, 0.5);
+  width: 100%;
+  /* height: 25px; */
 }
 .header-title {
   color: var(--Dark-Blue, #03045e);
@@ -119,8 +137,9 @@ a:hover {
 
 .header-links {
   display: flex;
-  justify-content: space-between;
-  flex-grow: 0.1;
+  /* margin-right: 36px; */
+  /* justify-content: space-between;
+  flex-grow: 0.1; */
 }
 
 .skills {
@@ -173,6 +192,37 @@ a:hover {
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
+  }
+}
+@media (max-width: 1000px) {
+  /* … */
+  .contact-body {
+    display: inline-block;
+    /* justify-content: space-between; */
+  }
+  .contact-body > div {
+    padding-top: 10px;
+  }
+  .about-title {
+    line-height: 50px;
+  }
+  #contact-form input {
+    width: 80vw;
+  }
+}
+@media (max-width: 600px) {
+  /* … */
+  .profession {
+    font-size: 3rem;
+    line-height: 80px;
+  }
+
+  .header-title {
+    font-size: 16px;
+    padding-right: 24px;
+  }
+  .contact-body > svg {
+    width: 75vw;
   }
 }
 
