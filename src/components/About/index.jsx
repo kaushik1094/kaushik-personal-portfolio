@@ -12,7 +12,9 @@ export default function About() {
         record of innovative problem-solving and the ability to deliver
         high-performance software solutions that meet complex business needs.
       </p>
-      <div className="about-title">Skills</div>
+      <div className="about-title" id="skills">
+        Skills
+      </div>
       {/* <div className="skills">
         <CircularProgress
           size={250}

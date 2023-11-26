@@ -29,7 +29,7 @@ const skills = {
 };
 export default function Skills() {
   return (
-    <div id="skills">
+    <div>
       <Box sx={{ flexGrow: 1 }}>
         <Grid
           container
@@ -37,7 +37,7 @@ export default function Skills() {
           columns={{ xs: 4, sm: 8, md: 12 }}
         >
           {skills.languages.map((lan, index) => (
-            <Grid item xs={2} sm={4} md={4} key={index}>
+            <Grid item xs={"auto"} sm={4} md={4} key={index}>
               <Item>
                 <CircularProgress
                   size={250}
@@ -50,7 +50,7 @@ export default function Skills() {
             </Grid>
           ))}
           {skills.frameworks.map((lan, index) => (
-            <Grid item xs={2} sm={4} md={4} key={index}>
+            <Grid item xs={"auto"} sm={4} md={4} key={index}>
               <Item>
                 <CircularProgress
                   size={250}
