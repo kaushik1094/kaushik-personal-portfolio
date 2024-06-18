@@ -66,7 +66,7 @@ export default function About() {
           title={"NodeJs (Express/Hapi)"}
         />
       </div> */}
-      {/* <Skills /> */}
+      <Skills />
     </div>
   );
 }
