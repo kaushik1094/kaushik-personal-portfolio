@@ -224,6 +224,10 @@ a:hover {
   .contact-body > svg {
     width: 75vw;
   }
+  .skill-title {
+    padding: 0px 10px;
+    line-height: 90px;
+  }
 }
 
 .card {
@@ -244,6 +248,17 @@ progress::-webkit-progress-bar {
   border-radius: 7px;
 }
 progress::-webkit-progress-value {
+  background-color: #03045e;
+  border-radius: 7px;
+  box-shadow: 1px 1px 5px 3px #32334c(255, 0, 0, 0.8);
+}
+
+progress::-moz-progress-bar {
+  /* style rules */
+  background-color: #03045e;
+  border-radius: 7px;
+}
+progress::-moz-progress-value {
   background-color: #03045e;
   border-radius: 7px;
   box-shadow: 1px 1px 5px 3px #32334c(255, 0, 0, 0.8);
