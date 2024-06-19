@@ -233,3 +233,19 @@ a:hover {
 .read-the-docs {
   color: #888;
 }
+progress {
+  border-radius: 7px;
+  width: 80%;
+  height: 22px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+progress::-webkit-progress-bar {
+  background-color: #8a8546;
+  border-radius: 7px;
+}
+progress::-webkit-progress-value {
+  background-color: #03045e;
+  border-radius: 7px;
+  box-shadow: 1px 1px 5px 3px #32334c(255, 0, 0, 0.8);
+}
+/* 8a8546 */
