@@ -226,6 +226,7 @@ a:hover {
   }
   .skill-title {
     padding: 0px 10px;
+    line-height: 90px;
   }
 }
 
