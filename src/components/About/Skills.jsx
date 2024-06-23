@@ -30,27 +30,6 @@ const skills = {
 };
 export default function Skills() {
   const { width } = useScreenDimensions();
-  console.log("dimensions", width);
-  const SkillsProgressBarForMobile = (
-    <div>
-      {skills.languages.map((lan) => {
-        return (
-          <div>
-            <div className="skill-title">{lan.title}</div>
-            {/* <progress value={lan.percentage} max={100} /> */}
-          </div>
-        );
-      })}
-      {skills.frameworks.map((framework) => {
-        return (
-          <div>
-            <div className="skill-title">{framework.title}</div>
-            {/* <progress value={framework.percentage} max={100} /> */}
-          </div>
-        );
-      })}
-    </div>
-  );
   return (
     <div>
       {width < 720 ? (
