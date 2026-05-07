@@ -1,72 +1,27 @@
 import Skills from "./Skills";
+import SectionTitle from "../motion/SectionTitle";
+import Reveal from "../motion/Reveal";
+
 export default function About() {
   return (
-    <div id="about">
-      <h2 className="about-title">About</h2>
-      <p className="about-body">
-        Senior Software Engineer with a Master’s degree in Computer Science and
-        extensive experience in the software development lifecycle. A dynamic
-        and driven professional, adept in crafting cutting-edge applications
-        utilizing an array of technologies such as React, Angular, React Native,
-        Redux, GraphQL, and RESTful services. Distinguished by a proven track
-        record of innovative problem-solving and the ability to deliver
-        high-performance software solutions that meet complex business needs.
-      </p>
-      <div className="about-title" id="skills">
-        Skills
-      </div>
-      {/* <div className="skills">
-        <CircularProgress
-          size={250}
-          strokeWidth={20}
-          percentage={98}
-          color="#03045E"
-          title={"JavaScript"}
-        />
-        <CircularProgress
-          size={250}
-          strokeWidth={20}
-          percentage={90}
-          color="#03045E"
-          title={"TypeScript"}
-        />
-        <CircularProgress
-          size={250}
-          strokeWidth={20}
-          percentage={95}
-          color="#03045E"
-          title={"React Native"}
-        />
-        <CircularProgress
-          size={250}
-          strokeWidth={20}
-          percentage={98}
-          color="#03045E"
-          title={"React"}
-        />
-        <CircularProgress
-          size={250}
-          strokeWidth={20}
-          percentage={98}
-          color="#03045E"
-          title={"Redux"}
-        />
-        <CircularProgress
-          size={250}
-          strokeWidth={20}
-          percentage={98}
-          color="#03045E"
-          title={"MobX"}
-        />
-        <CircularProgress
-          size={250}
-          strokeWidth={20}
-          percentage={98}
-          color="#03045E"
-          title={"NodeJs (Express/Hapi)"}
-        />
-      </div> */}
+    <section id="about" className="section">
+      <SectionTitle>About</SectionTitle>
+      <Reveal>
+        <p className="about-body">
+          Senior Software Engineer with a Master&rsquo;s in Computer Science and
+          a career rooted in national-security and human-centered computing
+          since 2018. I lead the design and delivery of cross-platform
+          applications &mdash; on web, Android, and iOS &mdash; that put critical
+          information in the hands of operators across more than{" "}
+          <strong>90 countries</strong> and <strong>12 languages</strong>. My work
+          spans full-stack engineering with React, React Native, TypeScript,
+          Node.js, and ASP.NET Core; AI / ML; and cloud delivery on AWS. I
+          care most about building software that performs under real-world
+          constraints &mdash; airports, border crossings, training facilities &mdash;
+          where reliability and clarity are non-negotiable.
+        </p>
+      </Reveal>
       <Skills />
-    </div>
+    </section>
   );
 }

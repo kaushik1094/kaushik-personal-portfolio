@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { FormControl, TextField } from "@mui/material";
+import { motion, useReducedMotion } from "framer-motion";
+
 const style = {
   "& label.Mui-focused": {
     color: "#474306",
@@ -11,33 +13,35 @@ const style = {
     },
   },
 };
+
 export default function ContactForm() {
+  const reduce = useReducedMotion();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [sentSuccess, setSentSuccess] = useState(false);
+
   function resetStates() {
     setName("");
     setEmail("");
     setMessage("");
-    setSentSuccess(false);
   }
+
   useEffect(() => {
     if (sentSuccess) {
-      alert("Message sent successfully!");
-      resetStates();
+      const timeout = setTimeout(() => {
+        setSentSuccess(false);
+        resetStates();
+      }, 2400);
+      return () => clearTimeout(timeout);
     }
+    return undefined;
   }, [sentSuccess]);
 
-  // eslint-disable-next-line no-unused-vars
   const sendEmail = (e) => {
     e.preventDefault();
     if (name !== "" && email !== "" && message !== "") {
-      const templateParams = {
-        name: name,
-        email,
-        notes: message,
-      };
+      const templateParams = { name, email, notes: message };
 
       emailjs
         .send(
@@ -62,25 +66,7 @@ export default function ContactForm() {
       alert("Please fill out all required form fields");
     }
   };
-  //   return (
-  //     <div id="stylized">
-  //       <form ref={form} onSubmit={sendEmail}>
-  //         <span>
-  //           <label>Name</label>
-  //           <input type="text" name="user_name" />
-  //         </span>
-  //         <span>
-  //           <label>Email</label>
-  //           <input type="email" name="user_email" />
-  //         </span>
-  //         <span>
-  //           <label>Message</label>
-  //           <textarea name="message" />
-  //         </span>
-  //         <input type="submit" value="Send" />
-  //       </form>
-  //     </div>
-  //   );
+
   return (
     <div id="contact-form">
       <div className="ping-title">Ping me</div>
@@ -90,9 +76,7 @@ export default function ContactForm() {
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
-          id="outlined-required"
           label="Name"
-          // defaultValue="Name"
           variant="outlined"
           margin="dense"
         />
@@ -101,10 +85,8 @@ export default function ContactForm() {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          id="outlined-required"
           label="Email"
           type="email"
-          // defaultValue="Your Email"
           variant="outlined"
           margin="normal"
           fullWidth
@@ -114,19 +96,45 @@ export default function ContactForm() {
           required
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          id="outlined-required"
           label="Message"
           multiline
           rows={5}
-          // maxRows={5}
-
           margin="normal"
           fullWidth
-          // variant="outline"
         />
-        <button className="resume-button" onClick={sendEmail}>
-          Send
-        </button>
+        <motion.button
+          className="resume-button"
+          onClick={sendEmail}
+          whileHover={reduce ? undefined : { y: -3, scale: 1.03 }}
+          whileTap={reduce ? undefined : { scale: 0.97 }}
+          transition={{ type: "spring", stiffness: 400, damping: 18 }}
+        >
+          {sentSuccess ? (
+            <span className="send-success">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                aria-hidden="true"
+              >
+                <motion.path
+                  d="M4 10.5L8.5 15L16 6"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                />
+              </svg>
+              Sent
+            </span>
+          ) : (
+            "Send"
+          )}
+        </motion.button>
       </FormControl>
     </div>
   );

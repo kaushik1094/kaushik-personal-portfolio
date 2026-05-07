@@ -1,16 +1,18 @@
 import Social from "../Social";
 import ContactForm from "./ContactForm";
-import ContactImageSvg from "./ContactImage";
+import SectionTitle from "../motion/SectionTitle";
+import Reveal from "../motion/Reveal";
 
 export default function Contact() {
   return (
-    <div id="contact">
-      <h2 className="about-title">Contact</h2>
-      <div className="contact-body">
-        <ContactImageSvg />
-        <ContactForm />
-        <Social />
-      </div>
-    </div>
+    <section id="contact" className="section">
+      <SectionTitle>Contact</SectionTitle>
+      <Reveal>
+        <div className="contact-body">
+          <ContactForm />
+          <Social />
+        </div>
+      </Reveal>
+    </section>
   );
 }
