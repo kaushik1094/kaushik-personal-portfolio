@@ -745,6 +745,15 @@ a:hover {
   align-items: center;
   gap: 8px;
 }
+.whatsapp-button:hover {
+  border-color: #25d366 !important;
+}
+.form-helper {
+  font-family: Poppins;
+  font-size: 12px;
+  color: rgba(3, 4, 94, 0.6);
+  margin-top: 8px;
+}
 
 /* -------- responsive ------------------------------------------------- */
 
