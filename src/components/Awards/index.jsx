@@ -15,8 +15,15 @@ const TEAM = [
   "Kaushik Thallapally",
 ];
 
+const PNNL_URL = "https://www.pnnl.gov/about/rd-100-awards";
+const RD100_URL =
+  "https://www.rdworldonline.com/winners-unveiled-for-2025-rd-100-special-recognition-categories/";
+
 export default function Awards() {
   const reduce = useReducedMotion();
+
+  const openPnnl = () =>
+    window.open(PNNL_URL, "_blank", "noopener,noreferrer");
 
   return (
     <section id="awards" className="section">
@@ -24,7 +31,19 @@ export default function Awards() {
 
       <Reveal>
         <motion.article
-          className={`award-card${reduce ? " award-card--no-shimmer" : ""}`}
+          className={`award-card award-card--link${
+            reduce ? " award-card--no-shimmer" : ""
+          }`}
+          role="link"
+          tabIndex={0}
+          aria-label="R&D 100 Award — read more on PNNL"
+          onClick={openPnnl}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              openPnnl();
+            }
+          }}
           whileHover={
             reduce
               ? undefined
@@ -57,6 +76,17 @@ export default function Awards() {
                 {idx < TEAM.length - 1 ? "," : ""}
               </span>
             ))}
+          </div>
+          <div className="award-source">
+            <a
+              className="award-source-link"
+              href={RD100_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+            >
+              Source: R&amp;D 100 Awards
+            </a>
           </div>
         </motion.article>
       </Reveal>
